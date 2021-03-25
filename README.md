@@ -1,1 +1,1 @@
-# cimx43-exercises.
+# cimx43-exercises
