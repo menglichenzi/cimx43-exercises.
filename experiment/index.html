@@ -4,32 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>闪亮的心心</title>
   <link rel="stylesheet" href="./style.css" />
-  <script src="./heart.js"></script>
-  <style>  
-    input {
-      background-color: rgb(146, 146, 231);
-      border: 1px dotted yellow;    
-      color: aliceblue;
-    }
-    #dv {    
-      border: 2px dotted yellow;
-      background-color: black;
-    }
-    span{
-      position: absolute;
-      font-size: 20px;
-    }
-    .cls{
-      background-color: #000;
-    }
-  </style>
+  <title>heart</title>
 </head>
-
 <body>
-  <input type="button" value="开关灯" id="off"  class="cls">
-  <input type="button" name="" id="star" value="星辰大海">
+  <input type="button" value="day/night" id="off"  class="cls">
+  <input type="button" name="" id="star" value="open heart">
   <div id="dv">
-  </div></body>
+  </div>
+  <div class="all">
+    <div class="name">
+    <h1>Everything Mom</h1> </div>
+ 
+    <div class="content">
+        <ul>How did you find the enery. Mom</ul>
+        <ul>To do all the things you did.</ul>
+        <ul>To be teacher, nurse and counselor</ul>
+        <ul>To me, when i was a kid.</ul>
+        <ul>How did you do it all. Mom</ul>
+        <ul>Be a chauffeur, cook and friend.</ul>
+        <ul>Yet find time to be a playmate.</ul>
+        <ul>I just cannot comprehend.</ul>
+        <ul>I see now it was love, Mom</ul>
+        <ul>That made you come whenever i'd call,</ul>
+        <ul>Your inexhaustible love, Mom</ul>
+        <ul>And I thank you for it all.</ul>
+        <br>
+        <ul>By Joanna Fuchs </ul>
+    </div>
+ </div>
+  <script>
+   document.getElementById("off").onclick=function(){
+     document.body.className=document.body.className!="cls"?"cls":"";
+   }
+    document.getElementById("star").onclick = function () {   
+       setInterval(function () {       
+        document.getElementById("dv").innerHTML="<span>❤</span>";
+        var span=document.querySelector("span");
+        var dv=document.getElementById("dv");
+
+        for(i=0;i<100;i++){
+          var sp= span.cloneNode(true);
+           dv.appendChild(sp);
+
+           var r = parseInt(Math.random() *256);
+           var g = parseInt(Math.random() * 256); 
+           var b = parseInt(Math.random() * 256);
+           var y = parseInt(Math.random() * 1240);
+           var x = parseInt(Math.random() *600);
+
+           document.getElementById("dv").firstElementChild.style.color="rgb("+r+","+g+","+b+")";
+           document.getElementById("dv").firstElementChild.style.left = y + "px";
+           document.getElementById("dv").firstElementChild.style.top = x + "px";
+        }       
+      },500);    
+    };
+  </script>
+</body>
+
 </html>
